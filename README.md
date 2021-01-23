@@ -1,16 +1,14 @@
 # icestick-counter
 
 ## Table of Contents
+<details>
+<summary>"Expand Contents"</summary>
  * [About](#About)
  * [Setup](#Setup)
     * [Moving files to pi](#Moving-files-to-pi)
  * [Demo](#Demo)
  * [Links](#Links)
  * [Task list](#Task-list)
-
-<details>
-<summary>"Click to expand"</summary>
-More to come ...
 </details>
 
 ## About
