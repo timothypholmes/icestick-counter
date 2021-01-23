@@ -4,7 +4,6 @@ module main (
              input MOSI,
              input CE0,
              output MISO,
-             //output SSIG,
              output D1,
              output D2,
              output D3,
@@ -18,8 +17,7 @@ module main (
             .sclk(SCLK),
             .mosi(MOSI),
             .ce0(CE0),
-            .miso(MISO),
-            //.ssig(ssig),
+            .miso(MISO),,
             .data_incoming(data_incoming),
             .data_outgoing(data_outgoing)
             );

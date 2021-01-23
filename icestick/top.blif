@@ -127,87 +127,87 @@
 .param LUT_INIT 0110100110010110
 .gate SB_LUT4 I0=$false I1=spi.index[0] I2=$false I3=$true O=$abc$337$techmap\spi.$0\index[2:0][0]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:37|/usr/local/bin/../share/yosys/ice40/arith_map.v:53"
+.attr src "top.v:17|spi.v:35|/usr/local/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
 .gate SB_CARRY CI=spi.index[0] CO=$auto$alumacc.cc:474:replace_alu$33.C[2] I0=spi.index[1] I1=$true
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:37|/usr/local/bin/../share/yosys/ice40/arith_map.v:47"
+.attr src "top.v:17|spi.v:35|/usr/local/bin/../share/yosys/ice40/arith_map.v:47"
 .gate SB_LUT4 I0=$false I1=spi.index[2] I2=$true I3=$auto$alumacc.cc:474:replace_alu$33.C[2] O=$abc$337$techmap\spi.$0\index[2:0][2]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:37|/usr/local/bin/../share/yosys/ice40/arith_map.v:53"
+.attr src "top.v:17|spi.v:35|/usr/local/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
 .gate SB_DFFN C=CE0 D=data_outgoing[0] Q=spi.send[0]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:23|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
+.attr src "top.v:17|spi.v:21|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
 .gate SB_DFFN C=CE0 D=data_outgoing[1] Q=spi.send[1]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:23|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
+.attr src "top.v:17|spi.v:21|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
 .gate SB_DFFN C=CE0 D=data_outgoing[2] Q=spi.send[2]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:23|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
+.attr src "top.v:17|spi.v:21|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
 .gate SB_DFFN C=CE0 D=data_outgoing[3] Q=spi.send[3]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:23|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
+.attr src "top.v:17|spi.v:21|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
 .gate SB_DFFN C=CE0 D=data_outgoing[4] Q=spi.send[4]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:23|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
+.attr src "top.v:17|spi.v:21|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
 .gate SB_DFFN C=CE0 D=data_outgoing[5] Q=spi.send[5]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:23|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
+.attr src "top.v:17|spi.v:21|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
 .gate SB_DFFN C=CE0 D=data_outgoing[6] Q=spi.send[6]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:23|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
+.attr src "top.v:17|spi.v:21|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
 .gate SB_DFFN C=CE0 D=data_outgoing[7] Q=spi.send[7]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:23|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
+.attr src "top.v:17|spi.v:21|/usr/local/bin/../share/yosys/ice40/cells_map.v:1"
 .gate SB_DFF C=CE0 D=spi.receive_buffer[0] Q=D1
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:28|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:26|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CE0 D=spi.receive_buffer[1] Q=D2
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:28|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:26|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CE0 D=spi.receive_buffer[2] Q=D3
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:28|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:26|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CE0 D=spi.receive_buffer[3] Q=D4
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:28|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:26|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CE0 D=spi.receive_buffer[4] Q=spi.receive[4]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:28|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:26|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CE0 D=spi.receive_buffer[5] Q=spi.receive[5]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:28|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:26|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CE0 D=spi.receive_buffer[6] Q=spi.receive[6]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:28|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:26|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CE0 D=spi.receive_buffer[7] Q=spi.receive[7]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:28|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:26|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=SCLK D=MOSI Q=spi.receive_buffer[0]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:34|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=SCLK D=spi.receive_buffer[0] Q=spi.receive_buffer[1]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:34|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=SCLK D=spi.receive_buffer[1] Q=spi.receive_buffer[2]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:34|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=SCLK D=spi.receive_buffer[2] Q=spi.receive_buffer[3]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:34|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=SCLK D=spi.receive_buffer[3] Q=spi.receive_buffer[4]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:34|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=SCLK D=spi.receive_buffer[4] Q=spi.receive_buffer[5]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:34|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=SCLK D=spi.receive_buffer[5] Q=spi.receive_buffer[6]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:34|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=SCLK D=spi.receive_buffer[6] Q=spi.receive_buffer[7]
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:34|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=clk D=$abc$337$auto$ice40_ffinit.cc:140:execute$318 Q=$abc$337$auto$ice40_ffinit.cc:141:execute$319
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "top.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
@@ -234,13 +234,13 @@
 .attr src "top.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=SCLK D=$abc$337$auto$ice40_ffinit.cc:140:execute$322 Q=$abc$337$auto$dff2dffe.cc:158:make_patterns_logic$255
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:34|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFFE C=SCLK D=spi.index[1] E=$abc$337$auto$dff2dffe.cc:158:make_patterns_logic$255 Q=$abc$337$auto$ice40_ffinit.cc:141:execute$331
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:34|/usr/local/bin/../share/yosys/ice40/cells_map.v:8"
+.attr src "top.v:17|spi.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:8"
 .gate SB_DFF C=SCLK D=$abc$337$auto$ice40_ffinit.cc:140:execute$306 Q=$abc$337$auto$ice40_ffinit.cc:141:execute$307
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "top.v:17|spi.v:34|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:17|spi.v:32|/usr/local/bin/../share/yosys/ice40/cells_map.v:2"
 .names $false $auto$alumacc.cc:474:replace_alu$30.C[0]
 1 1
 .names D1 $auto$alumacc.cc:474:replace_alu$30.C[1]
