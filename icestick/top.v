@@ -7,7 +7,7 @@ module main (
              output D1,
              output D2,
              output D3,
-             output D4,
+             output D4
              );
 
    //wire ssig;
@@ -17,7 +17,7 @@ module main (
             .sclk(SCLK),
             .mosi(MOSI),
             .ce0(CE0),
-            .miso(MISO),,
+            .miso(MISO),
             .data_incoming(data_incoming),
             .data_outgoing(data_outgoing)
             );

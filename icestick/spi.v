@@ -1,4 +1,4 @@
-module SPI (input        clk,   // fpga clock       
+module SPI (//input        clk,   // fpga clock       
             input        sclk,  // slave clock
             input        mosi,  // master out, slave in
             input        ce0,   // clock enable

@@ -12,7 +12,7 @@ set_io clk 21
 # --    D5: green led
 
 # -- Leds for SPI
-set_io D5 95 # Green
+# set_io D5 95 # Green
 set_io D1 99 # Red 1 
 set_io D2 98 # Red 2
 set_io D3 97 # Red 3 
@@ -34,4 +34,4 @@ set_io SCLK 91
 set_io MOSI 88
 set_io MISO 90
 set_io CE0 81
-#set_io SSIG 80
+set_io SSIG 80
