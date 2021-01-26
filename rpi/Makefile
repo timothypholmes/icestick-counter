@@ -1,4 +1,8 @@
-SHELL:=/bin/bash
+warning = Wall
+library = lwiringPi
 
 all:
-	gcc -Wall -o spi spi.c -lwiringPi
+	gcc -$(warning) -o counter counter.c -$(library)
+
+clean:
+	rm ./counter

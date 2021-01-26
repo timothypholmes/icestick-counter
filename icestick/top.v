@@ -7,7 +7,8 @@ module main (
              output D1,
              output D2,
              output D3,
-             output D4
+             output D4,
+             output D5
              );
 
    //wire ssig;
@@ -26,9 +27,10 @@ module main (
    assign D2 = data_incoming[1];
    assign D3 = data_incoming[2];
    assign D4 = data_incoming[3];
+   assign D5 = data_incoming[5];
 
    always @(posedge clk) begin
-      data_outgoing <= data_incoming + 3;
+      data_outgoing <= data_incoming + 4;
    end
    
 endmodule
