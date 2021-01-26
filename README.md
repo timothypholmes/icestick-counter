@@ -5,6 +5,9 @@
  * [Setup](#Setup)
     * [Moving files to pi](#Moving-files-to-pi)
     * [Turning on SPI](#Turning-on-SPI)
+    * [Hardware setup](Hardware-setup)
+    * [Compiling Icestick](Compiling-Icestick)
+    * [Running count program](Running-count-program)
  * [Demo](#Demo)
  * [Links](#Links)
  * [Task list](#Task-list)
@@ -70,7 +73,7 @@ sudo reboot
 
 ### Hardware setup
 
-![alt text](https://github.com/timothypholmes/icestick-counter/blob/main/.wires.png)
+![alt text](https://github.com/timothypholmes/icestick-counter/blob/main/wires.png)
 
 The icestick pins that are used are shown below.
 
