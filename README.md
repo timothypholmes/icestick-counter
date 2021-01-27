@@ -113,13 +113,15 @@ The Raspberry-pi has will display pinouts using the command `pinout`. This is sh
                   GND (39) (40) GPIO21
 ```
 
-The following pins are used on the icestick
+The following icestick pins connect to the following RPI pins
 
 ```
-MOSI -> Pin 88 -> GPIO Pin (19)
-MISO -> Pin 90 -> GPIO Pin (21)
-SCLK -> Pin 91 -> GPIO Pin (23)
-CE0  -> Pin 81 -> GPIO Pin (24)
+Type    FPGA Pin    RPI Pin
+------------------------------------
+MOSI -> Pin 88      -> GPIO Pin (19)
+MISO -> Pin 90      -> GPIO Pin (21)
+SCLK -> Pin 91      -> GPIO Pin (23)
+CE0  -> Pin 81      -> GPIO Pin (24)
 ```
 
 ### Compiling Icestick
@@ -160,7 +162,9 @@ and run the command
 [ice-stick-getting-started](http://www.clifford.at/icestorm/)
 
 [ice-tutorial](https://mjoldfield.com/atelier/2018/02/ice40-blinky-icestick.html)
+
 [ice-examples](https://github.com/nesl/ice40_examples)
+
 [Pin-map](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/doc/images/icestick_pinout.png)
 
 ## Task list

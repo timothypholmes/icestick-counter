@@ -57,7 +57,7 @@ else
 
 cat > pi_connect.sh << EOF
     #!/bin/bash
-    ssh -t $user@$addr 'cd ./rpi; bash -l'	
+    ssh -t $user@$addr '(cd ./rpi && make); bash -l'	
 EOF
   chmod +x pi_connect.sh
   ./pi_connect.sh
