@@ -3,3 +3,6 @@ pi_connect.sh
 
 #  Editor
 .vscode
+
+# Macos file
+.DS_Store
