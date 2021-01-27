@@ -116,12 +116,12 @@ The Raspberry-pi has will display pinouts using the command `pinout`. This is sh
 The following icestick pins connect to the following RPI pins
 
 ```
-Type    FPGA Pin    RPI Pin
-------------------------------------
-MOSI -> Pin 88      -> GPIO Pin (19)
-MISO -> Pin 90      -> GPIO Pin (21)
-SCLK -> Pin 91      -> GPIO Pin (23)
-CE0  -> Pin 81      -> GPIO Pin (24)
+Type    FPGA Pin    RPI Pin            Wire from img
+----------------------------------------------------
+MOSI -> Pin 88      -> GPIO Pin (19)   (White)
+MISO -> Pin 90      -> GPIO Pin (21)   (Red)
+SCLK -> Pin 91      -> GPIO Pin (23)   (Blue)
+CE0  -> Pin 81      -> GPIO Pin (24)   (Yellow)
 ```
 
 ### Compiling Icestick
