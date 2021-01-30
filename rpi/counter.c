@@ -90,7 +90,9 @@ int main (int argc, char **argv) {
       fprintf(stderr, "Error: killing process.\n");
       return -1;    
     }
+
     //receive_data(data[0]);
+    
     if (delay_flag == 1) {
       delay(1000);
     }
