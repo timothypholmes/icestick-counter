@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <wiringPiSPI.h>
 #include <wiringPi.h>
-
-
+#include <ctype.h>
+#include <stdlib.h>
+#include <unistd.h>
 /*
 
 */
@@ -40,11 +41,40 @@ int receive_data (unsigned char data) {
 /*
 
 */
-int main (void) {
+int main (int argc, char **argv) {
   wiringPiSetup ();
 
-  int fd;
+  // other values
   unsigned char data[1];
+
+  // Default values 
+  int fd;
+  int delay_flag = 0;
+  int c;
+
+  opterr = 0;
+  while ((c = getopt (argc, argv, "f:d")) != -1)
+    switch (c)
+      {
+      case 'f':
+        fd = optarg;
+        break;
+      case 'd':
+        delay_flag = 1;
+        break;
+      case '?':
+        if (optopt == 'c')
+          fprintf (stderr, "Option -%c requires an argument.\n", optopt);
+        else if (isprint (optopt))
+          fprintf (stderr, "Unknown option `-%c'.\n", optopt);
+        else
+          fprintf (stderr,
+                   "Unknown option character `\\x%x'.\n",
+                   optopt);
+        return 1;
+      default:
+        abort ();
+      }
 
   if ((fd = wiringPiSPISetup(0, 500000)) == -1 ){
     fprintf(stderr, "Error: setup failed.\n");
@@ -61,8 +91,9 @@ int main (void) {
       return -1;    
     }
     //receive_data(data[0]);
-    delay(1000);
-
+    if (delay_flag == 1) {
+      delay(1000);
+    }
   }
   
   return 0;
