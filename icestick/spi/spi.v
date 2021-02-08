@@ -39,3 +39,35 @@ module SPI (input        sclk,  // slave clock
    end
 
 endmodule
+
+
+module counter (input rst, 
+                input clk, 
+                input cet, 
+                input cep, 
+                output [size-1:0] count, 
+                output tc);
+
+
+   parameter size = 5;
+   parameter length = 20;
+
+   reg [size-1:0] count; 
+
+   wire tc; 
+
+   always @ (posedge clk or posedge rst)
+   if (rst) 
+      count <= {size{1'b0}};
+   else
+   if (cet && cep) // Enables both  true
+      begin
+         if (count == length - 1)
+            count <= {size{1'b0}};
+         else
+            count <= count + 1'b1;
+      end
+
+   assign tc = (cet && (count == length-1));
+
+endmodule
