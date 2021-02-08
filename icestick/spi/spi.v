@@ -1,9 +1,8 @@
-module SPI (//input        clk,   // fpga clock       
-            input        sclk,  // slave clock
+module SPI (input        sclk,  // slave clock
             input        mosi,  // master out, slave in
             input        ce0,   // clock enable
             output       miso,  // master in, slave out
-            input [7:0]  data_outgoing,
+            input  [7:0] data_outgoing,
             output [7:0] data_incoming
             );
 
