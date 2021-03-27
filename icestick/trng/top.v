@@ -1,5 +1,4 @@
-module main (
-             input clk,
+module main (input clk,
              input SCLK,
              input MOSI,
              input CE0,

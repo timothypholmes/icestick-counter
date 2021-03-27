@@ -1,9 +1,8 @@
-module SPI (//input        clk,   // fpga clock       
-            input        sclk,  // slave clock
+module SPI (input        sclk,  // slave clock
             input        mosi,  // master out, slave in
             input        ce0,   // clock enable
             output       miso,  // master in, slave out
-            input [7:0]  data_outgoing,
+            input  [7:0] data_outgoing,
             output [7:0] data_incoming
             );
 
@@ -38,5 +37,37 @@ module SPI (//input        clk,   // fpga clock
         index <= 3'b111;
       end
    end
+
+endmodule
+
+
+module counter (input rst, 
+                input clk, 
+                input cet, 
+                input cep, 
+                output [size-1:0] count, 
+                output tc);
+
+
+   parameter size = 5;
+   parameter length = 20;
+
+   reg [size-1:0] count; 
+
+   wire tc; 
+
+   always @ (posedge clk or posedge rst)
+   if (rst) 
+      count <= {size{1'b0}};
+   else
+   if (cet && cep) // Enables both  true
+      begin
+         if (count == length - 1)
+            count <= {size{1'b0}};
+         else
+            count <= count + 1'b1;
+      end
+
+   assign tc = (cet && (count == length-1));
 
 endmodule
