@@ -34,7 +34,6 @@ int receive_data (unsigned char data) {
 
   printf("received: %u\n", data);
   
-
   return 0;
 }
 
