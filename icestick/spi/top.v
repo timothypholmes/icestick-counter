@@ -7,7 +7,7 @@ module main (input clk,
              output D2,
              output D3,
              output D4,
-             output D5
+             output D5,
              );
 
    //wire ssig;

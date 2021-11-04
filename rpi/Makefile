@@ -1,9 +1,16 @@
 warning = Wall
-library = lwiringPi
+file1 = counter
+file2 = counter_pigpio
+library1 = lwiringPi
+library2 = lpigpio
 
-all:
-	#gcc -$(warning) -o counter counter.c -$(library)
-	gcc -$(warning) -pthread -o counter_pigpio counter_pigpio.c -lpigpio -lrt
+all: counter counter_pigpio
+
+counter:
+	gcc -$(warning) -o $(file1) $(file1).c -$(library1)
+
+counter_pigpio:
+	gcc -$(warning) -pthread -o $(file2) $(file2).c -$(library2) -lrt
+
 clean:
-	#rm ./counter
-	rm ./counter_pigpio
+	rm ./counter ./counter_pigpio

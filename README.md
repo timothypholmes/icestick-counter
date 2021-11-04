@@ -157,6 +157,12 @@ and run the command
 
 `./counter`
 
+to run the program that uses the library wiringpi. Use the command 
+
+`sudo ./counter_pigpio`
+
+to run the program that uses the library pigpio. NOTE: the use of sudo. The program will not initilize the GPIO without the use of sudo. 
+
 ## Links
 
 [ice-stick-getting-started](http://www.clifford.at/icestorm/)

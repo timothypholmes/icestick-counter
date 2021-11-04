@@ -68,6 +68,7 @@ int main (int argc, char **argv) {
   // Initialise the library
   if (gpioInitialise() < 0) {
     printf("pigpio initialisation failed.");
+    exit(1);
   } else {
     printf("pigpio initialised okay.");
   }
@@ -98,6 +99,11 @@ int main (int argc, char **argv) {
   start = time_time();
 
   for (int i = 0; i <LOOPS ; i++) {
+
+    if (delay_flag == 1) {
+      sleep(1);
+    }
+
     data[0] = DATAX0;
     bytes = read_bytes(h, data, 7);
 
