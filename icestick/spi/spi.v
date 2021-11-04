@@ -52,7 +52,7 @@ module counter (input rst,
    parameter size = 5;
    parameter length = 20;
 
-   reg [size-1:0] count; 
+   reg [size - 1:0] count; 
 
    wire tc; 
 
@@ -68,6 +68,14 @@ module counter (input rst,
             count <= count + 1'b1;
       end
 
-   assign tc = (cet && (count == length-1));
+   assign tc = (cet && (count == length - 1));
+
+endmodule
+
+module total_count ()
+
+endmodule
+
+module correlation_function ()
 
 endmodule
