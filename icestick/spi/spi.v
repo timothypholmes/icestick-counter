@@ -16,6 +16,7 @@ module SPI (input        sclk,  // slave clock
 
    assign miso = send[index];
    assign data_incoming = receive;
+   //assign data_incoming = counter(clock, receive, data_incoming);
    
    always @(negedge ce0) begin      
       latch_data <= 0;
@@ -41,41 +42,20 @@ module SPI (input        sclk,  // slave clock
 endmodule
 
 
-module counter (input rst, 
-                input clk, 
-                input cet, 
-                input cep, 
-                output [size-1:0] count, 
-                output tc);
+//function counter (input clk,              // Declare input port for the clock to allow counter to count up  
+//                 input rstn,             // Declare input port for the reset to allow the counter to be reset to 0 when required  
+//                  output reg[7:0] count); // Declare 8-bit output port to get the counter values  
+
+//   always @ (posedge clk) begin  
+      if (! rstn)  
+         count <= 0;  
+      else  
+         count <= count + 1;  
+   end  
+
+endfunction
 
 
-   parameter size = 5;
-   parameter length = 20;
-
-   reg [size - 1:0] count; 
-
-   wire tc; 
-
-   always @ (posedge clk or posedge rst)
-   if (rst) 
-      count <= {size{1'b0}};
-   else
-   if (cet && cep) // Enables both  true
-      begin
-         if (count == length - 1)
-            count <= {size{1'b0}};
-         else
-            count <= count + 1'b1;
-      end
-
-   assign tc = (cet && (count == length - 1));
-
-endmodule
-
-module total_count ()
-
-endmodule
-
-module correlation_function ()
-
-endmodule
+//module correlation_function ()
+   // Add later
+//endmodule
