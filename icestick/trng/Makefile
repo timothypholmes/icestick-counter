@@ -4,7 +4,7 @@ PACKAGE = tq144
 VERILOGS = top.v lfsr.v  
 PCF = icestick.pcf
 
-all: top.bin
+all: upload
 
 %.blif: $(VERILOGS)
 	yosys -q -p 'synth_ice40 -top main -blif $@' $(VERILOGS)
