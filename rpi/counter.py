@@ -13,7 +13,7 @@ MODE = 0
 
 pi = pigpio.pi()
 #pi.spi_close(CS)  # because I use ctrl-C to break each time
-pi.spi_close(CS) 
+#pi.spi_close(CS) 
 h = pi.spi_open(0, 1000000, 3)
 
 
@@ -22,13 +22,13 @@ sum_val = 0
 while True:
 
     (count, rx_data) = pi.spi_xfer(h, hex(sum_val))
-    '''
+    
     out = 0
     for bit in rx_data:
         out = (out << 1) | bit
-    '''
-    i = ba2int(rx_data)
-    sum_val += i
+    
+    #i = ba2int(rx_data)
+    sum_val += out
     print(sum_val)
 
 
