@@ -30,11 +30,11 @@ set_io D4 96 # Red 4
 #     ----------         
 
 # -- Pins for SPI
-set_io SCLK 91
-set_io MOSI 88
-set_io MISO 90
-set_io CE0 81
-set_io CE1 80
+#set_io SCLK 91
+#set_io MOSI 88
+#set_io MISO 90
+#set_io CE0 81
+#set_io CE1 80
 
 # -- Pins for UART
 # set_io TXD 79

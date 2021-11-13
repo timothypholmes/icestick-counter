@@ -1,7 +1,7 @@
 DEVICE = 1k
 PACKAGE = tq144
 
-VERILOGS = top.v trng.v  
+VERILOGS = top.v lfsr.v  
 PCF = icestick.pcf
 
 all: top.bin
