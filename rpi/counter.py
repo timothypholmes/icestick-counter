@@ -28,7 +28,7 @@ while True:
         out = (out << 1) | bit
     
     #i = ba2int(rx_data)
-    sum_val += out
+    #sum_val += out
     print(sum_val)
 
 
