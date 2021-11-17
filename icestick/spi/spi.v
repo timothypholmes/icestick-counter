@@ -48,19 +48,14 @@ endmodule
 module counter (// input
                 input         clk,
                 input  [7:0]  data_incoming,
-                input  [24:0] incount,
+                input  [7:0] incount,
                 // output
-                output [24:0] outcount
+                output [7:0] outcount
                );
-
-   reg [7:0] send;   
-   reg [7:0] receive;
-   reg [24:0] outcount;
-   assign data_incoming = receive;
 
    always @ (posedge clk) 
 	begin
-        outcount <= incount + receive + 1;
+        outcount <= data_incoming + 1;
    end
 
 endmodule

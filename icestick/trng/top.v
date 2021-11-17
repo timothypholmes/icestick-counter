@@ -6,8 +6,47 @@ module main (input clk,
              output D5,
              );
 
+	// Inputs
+	//reg clock;
+	reg reset;
+
+	// Outputs
+	wire [12:0] rnd;
+
+	LFSR u1(.clock(clk), 
+  			.reset(reset), 
+  			.rnd(rnd)
+		   );
+
+	assign {D1, D2, D3, D4, D5} = rnd;
+
+	initial begin
+	clock = 0;
+	forever
+	#50 clock = ~clock;
+	end
+  
+	initial begin
+	// Initialize Inputs
+  	reset = 0;
+
+	// Wait 100 ns for global reset to finish
+	#100;
+		reset = 1;
+	#200;
+	reset = 0;
+	// Add stimulus here
+
+	end
+ 
+	//initial begin
+		//$display("clock rnd");
+		//$monitor("%b,%b", clock, rnd);
+	//end  
+
+	/*
 	localparam BITS = 5;
-	localparam LOG2DELAY = 1;//25;
+	localparam LOG2DELAY = 20;//25;
 
 	reg [BITS + LOG2DELAY - 1:0] counter = 0;
 	reg [BITS - 1:0] outcnt;
@@ -18,5 +57,6 @@ module main (input clk,
 	end
 
 	assign {D1, D2, D3, D4, D5} = outcnt ^ (outcnt >> 1);
+	*/
    
 endmodule
