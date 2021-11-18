@@ -2,8 +2,6 @@ import pigpio
 import time
 from bitarray import bitarray
 from bitarray.util import ba2int
-
-
 import time
 import spidev
 
