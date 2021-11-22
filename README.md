@@ -10,6 +10,10 @@
     * [Running count program](#Running-count-program)
  * [Demo](#Demo)
  * [Links](#Links)
+ * [FPGA Tools Setup](#FPGA-Tools-Setup)
+    * [](#)
+    * [](#)
+    * [](#)
  * [Task list](#Task-list)
 
 
@@ -172,6 +176,55 @@ to run the program that uses the library pigpio. NOTE: the use of sudo. The prog
 [ice-examples](https://github.com/nesl/ice40_examples)
 
 [Pin-map](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/doc/images/icestick_pinout.png)
+
+## FPGA Tools Setup
+
+### IceStorm Tools
+
+```
+cd ~/src/fpga-toolchain
+
+git clone https://github.com/cliffordwolf/icestorm.git icestorm
+
+cd icestorm
+make -j$(nproc)
+make install
+```
+
+### nextpnr
+
+```
+cd ~/src/fpga-toolchain
+
+git clone https://github.com/YosysHQ/nextpnr nextpnr
+
+cd nextpnr
+git submodule init && git submodule update
+cmake -DARCH=ice40 -DCMAKE_INSTALL_PREFIX=/usr/local .
+make -j$(nproc)
+make install
+```
+
+### Yosys
+
+On mac edit the Makefile and edit the first few lines as:
+
+```
+#CONFIG := clang
+CONFIG := gcc
+```
+
+Then follow the following instructions to install Yosys:
+
+```
+cd ~/src/fpga-toolchain
+
+git clone https://github.com/YosysHQ/yosys yosys
+
+cd yosys
+make -j$(nproc)
+make install
+```
 
 ## Task list
 
