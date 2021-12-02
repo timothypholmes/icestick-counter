@@ -5,6 +5,7 @@ module top (
 	input SCLK,
 	input CE0,
 	input CE1,
+    input clk
 );
     // setup internal 48MHz oscillator
     wire clk;

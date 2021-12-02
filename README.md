@@ -8,7 +8,8 @@
     * [Hardware setup](#Hardware-setup)
     * [Compiling Icestick](#Compiling-Icestick)
     * [Running count program](#Running-count-program)
- * [Demo](#Demo)
+* [Test](#Test) 
+* [Demo](#Demo)
  * [Links](#Links)
  * [FPGA Tools Setup](#FPGA-Tools-Setup)
     * [](#)
@@ -150,6 +151,57 @@ cd ./rpi
 run the command `make`, this will compile the programe with the appropriate library. Then
 run `./counter` to start the program.
 
+## Test
+
+To test the SPI between the raspberry pi, download the test program by running:
+
+```
+wget https://raw.githubusercontent.com/raspberrypi/linux/rpi-3.10.y/Documentation/spi/spidev_test.c
+```
+
+Then compile the program using:
+
+```
+gcc -o spidev_test spidev_test.c
+```
+
+Finally, run the program using
+
+```
+./spidev_test -D /dev/spidev0.0
+```
+
+If the the hardware is working properly it should return
+
+```
+spi mode: 0
+bits per word: 8
+max speed: 500000 Hz (500 KHz)
+
+FF FF FF FF FF FF
+40 00 00 00 00 95
+FF FF FF FF FF FF
+FF FF FF FF FF FF
+FF FF FF FF FF FF
+DE AD BE EF BA AD
+F0 0D
+```
+
+Otherwise, if the hardware fails it will return:
+
+```
+spi mode: 0
+bits per word: 8
+max speed: 500000 Hz (500 KHz)
+
+00 00 00 00 00 00
+00 00 00 00 00 00
+00 00 00 00 00 00
+00 00 00 00 00 00
+00 00 00 00 00 00
+00 00 00 00 00 00
+00 00
+```
 
 ## Demo
 

@@ -1,6 +1,5 @@
-# -- System internal clock
+#-- System internal clock
 set_io clk 21
-
 
 # -- Icestick leds map
 #
@@ -12,11 +11,11 @@ set_io clk 21
 # --    D5: green led
 
 # -- Leds for SPI
-set_io D5 95 # Green
-set_io D1 99 # Red 1 
-set_io D2 98 # Red 2
-set_io D3 97 # Red 3 
-set_io D4 96 # Red 4
+set_io RGB0 95 # Green
+set_io RGB1 99 # Red 1
+set_io RGB2 98 # Red 2
+set_io RGB3 97 # Red 3
+set_io RGB4 96 # Red 4
 
 # -- FPGA pins:
 #
@@ -24,10 +23,10 @@ set_io D4 96 # Red 4
 #    | 3V3  3V3 |
 #    | GND  GND |
 #    | 91    81 |
-#    | 90    80 |              
-#    | 88    79 |              
-#    | 87    78 | <            
-#     ----------         
+#    | 90    80 |
+#    | 88    79 |
+#    | 87    78 | <
+#     ----------
 
 # -- Pins for SPI
 set_io SCLK 91

@@ -5,7 +5,7 @@ from bitarray.util import ba2int
 import time
 import spidev
 
-
+'''
 spi_speed_hz = 2500000
 spi_delay_us = 0
 
@@ -24,10 +24,10 @@ print("Raw response: {}".format(resp))
 
 print("Sent {}".format(bin(msg[0])))
 print("Received {}".format(bin(resp[-1])))
-
+'''
 
 #sudo pigpiod -p 8888
-'''
+
 CS   = 2
 MISO = 19
 MOSI = 21
@@ -38,7 +38,7 @@ pi = pigpio.pi()
 #pi.spi_close(CS)  # because I use ctrl-C to break each time
 #pi.spi_close(CS) 
 #h = pi.spi_open(0, 1000000, 3)
-handle = pi.spi_open(0, 50000, 0)
+handle = pi.spi_open(0, 50000, 3)
 
 sum_val = 0
 #print(int(sum_val, 16))
@@ -78,4 +78,3 @@ while True:
     #sum_val += int(rx_data)
     #print(sum_val)
     time.sleep(0.75)
-'''

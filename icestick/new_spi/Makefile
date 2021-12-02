@@ -1,43 +1,29 @@
+DEVICE = 1k
+PACKAGE = tq144
 
-# modified from fomu workshop blink example:
-# https://github.com/im-tomu/fomu-workshop
+VERILOGS = spi.v
+PCF = icestick.pcf
 
-PROJ = spi
-PCF_FILE = icestick.pcf
-YOSYSFLAGS?= 
-PNRFLAGS  ?= --up5k --package sg48 --pcf $(PCF_FILE)
+all: upload
 
-# Default target: build bitstream file
-all: $(PROJ).bit
-	@true
+%.blif: $(VERILOGS)
+	yosys -q -p 'synth_ice40 -top top -blif $@' $(VERILOGS)
 
-.DEFAULT: all
+%.txt: %.blif
+	arachne-pnr -d $(DEVICE) -P $(PACKAGE) -o $@ -p $(PCF) $<
 
-# Use *Yosys* to generate the synthesized netlist.
-# This is called the **synthesis** and **tech mapping** step.
-%.json: %.v
-	yosys $(YOSYSFLAGS) -p 'synth_ice40 -top top -json $@' $^
-
-# Use **nextpnr** to generate the FPGA configuration.
-# This is called the **place** and **route** step.
-%.asc: %.json $(PCF_FILE)
-	nextpnr-ice40 $(PNRFLAGS) --json $< --asc $@
-
-# Use icepack to convert the FPGA configuration into a "bitstream" loadable onto the FPGA.
-# This is called the bitstream generation step.
-%.bit: %.asc
+%.bin: %.txt
 	icepack $< $@
 
-# use progam.py to load bitstream onto up5k using SPI
-load: $(PROJ).bit
-	python3 ../program.py $<
+upload: top.bin
+	iceprog $<
 
-# Cleanup the generated files.
+explain: top.txt
+	icebox_explain $<
+
 clean:
-	-rm -f $(PROJ).json 	# Generate netlist
-	-rm -f $(PROJ).asc 	# FPGA configuration
-	-rm -f $(PROJ).bit 	# FPGA bitstream
+	rm -f *.bin *.txt *.blif
 
+.PRECIOUS: %.bin %.txt %.blif
 
-.SECONDARY:
-.PHONY: load clean
+.PHONY: all explain install clean

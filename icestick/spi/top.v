@@ -14,7 +14,7 @@ module main(// input
 
    //wire ssig;
    wire [7:0] data_incoming;
-   wire [7:0] data_outgoing;//= 8'b0000001;// = 8'b00000000;//8'b00000000;//8'b0001111;
+   wire [7:0] data_outgoing;//=8'b0001111;//data_outgoing;//= 8'b0000001;// = 8'b00000000;//8'b00000000;//8'b0001111;
    //reg [24:0] ncount = 8'b00000000;
 
    // call spi function
@@ -38,6 +38,7 @@ module main(// input
    wire [7:0] outcount;
 
    // call counter function
+   /*
    counter u2(// input
                .clk(clk),
                .data_incoming(data_incoming),
@@ -45,10 +46,10 @@ module main(// input
                // output
                .outcount(ncount),
                );
-   
-   always @(posedge clk) begin
-      //data_outgoing <= data_incoming + 4;
-      data_outgoing <= outcount;
-   end
+   */
+   //always @(posedge clk) begin
+   //   //data_outgoing <= data_incoming + 4;
+   //   data_outgoing <= outcount;
+   //end
    
 endmodule
