@@ -1,50 +1,55 @@
 //
 module spi (// input
-            input        sclk,  // slave clock
-            input        mosi,  // master out, slave in
-            input        ce0,   // clock enable
-            input  [7:0] data_outgoing,
-            // output
-            output       miso,  // master in, slave out
-            output [7:0] data_incoming
-           );
+			input MOSI,
+			input SCLK,
+			input CE0,
+			input CE1,
+    		input clk,
+			// output
+			output MISO,
+		   );
 
-   reg [1:0] count = 2'b00;
-   reg [7:0] send;
-   reg [7:0] receive;
-   reg [7:0] receive_buffer;
-   
-   reg latch_data = 0;   
-   wire clock = sclk | latch_data;
+    // setup internal 48MHz oscillator
+    wire clk;
 
-   assign miso = send[index];
-   assign data_incoming = receive;
-   
-   always @(negedge ce0) begin      
-      latch_data <= 0;
-      send <= data_outgoing;
-   end
-   
-   always @(posedge ce0) begin
-      latch_data <= 1;
-      receive <= receive_buffer;
-   end
+	// store data in registers
+    reg [7:0] read_data = 0;
+	reg [7:0] write_data = 0;
 
-   reg [2:0] index = 3'b111;
-   always @(posedge clock) begin
-      if(latch_data == 0) begin
-         receive_buffer <= {receive_buffer[6:0], mosi};
-         index <= index - 1;
-      end
-      else begin
-        index <= 3'b111;
-      end
-   end
+	reg [1:0] sclk_buf = 0;
+	always @(posedge clk) begin
+		// buffer SPI clock
+		sclk_buf = {sclk_buf[0], SCLK};
+	end
 
+    assign D5 = 0;
+    assign D1 = 1;
+	reg [3:0] bit_count = 0;
+	always @(posedge clk) begin
+		// if buffered SPI clock has rising edge, clock in MOSI
+		// read
+        if (sclk_buf[1:0] == 2'b01) begin
+			read_data = {read_data[6:0], MOSI};
+			bit_count <= bit_count + 1;
+        end
+        // write
+		if (sclk_buf[1:0] == 2'b10) begin
+			if (bit_count[3]) begin
+				bit_count <= 0;
+				write_data <= read_data;
+			end else begin
+				write_data <= {write_data[6:0], 1'b0};
+			end
+		end
+    end
+    assign D1 = 0;
+    assign D5 = 1;
+
+    // return data
+	assign MISO = write_data[7];
 endmodule
 
 // XX bit counter function 
-
 module counter (// input
                 input         clk,
                 input  [7:0]  data_incoming,
